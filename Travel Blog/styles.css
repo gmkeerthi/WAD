@@ -1,0 +1,148 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #333;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+nav ul li a:hover {
+    background: #ff7b00;
+    border-radius: 5px;
+}
+
+/* Home Section */
+.home {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    background: url('https://static.toiimg.com/thumb/112530162/Vietnams-destinations-that-are-absolute-tourist-magnets.jpg?width=1200&height=800&resize=4') no-repeat center center/cover;
+
+}
+
+.hero h1 {
+    font-size: 30px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.hero p {
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.cta-button {
+    margin-top: 20px;
+    background: #ff7b00;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.cta-button:hover {
+    background: #e66000;
+}
+
+.blog h2{
+    bottom: 10px;
+    padding: 20px;
+}
+.blog-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 20px;
+}
+.blog-post {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+.blog-post img {
+    width: 100%;
+    border-radius: 10px;
+}
+.blog-post a {
+    display: block;
+    margin-top: 10px;
+    color: #ff7b00;
+    text-decoration: none;
+    font-weight: bold;
+}
+.blog-post a:hover {
+    text-decoration: underline;
+}
+
+.authors {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+}
+.author {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+}
+.author img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
