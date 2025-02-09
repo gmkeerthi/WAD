@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Shopping Cart</h1>
+        <div class="products">
+            <div class="product" data-name="Sneakers" data-price="1100">
+                <img src="https://shopify-app-group-product.s3.amazonaws.com/1714733608973-8.jpg" alt="Sneakers">
+                <p>Men's Low-Top Casual Sneakers - ₹1,100</p>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Jacket" data-price="3499">
+                <img src="https://www.alamodelabel.in/cdn/shop/files/WhatsApp_Image_2024-11-26_at_18.38.08_72bcf433_600x.jpg?v=1735460493" alt="Jacket">
+                <p>Margot Warm Fleece Lined Parka Jacket - ₹3,499</p>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Headphones" data-price="1499">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5IBK5K_9NBjLc8QgVPXN_ujVxOqdhiRjLUA&s" alt="Headphones">
+                <p>Noise-Canceling Headphones - ₹1,999</p>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="cart">
+            <h2>Cart</h2>
+            <ul class="cart-items"></ul>
+            <p class="total">Total: ₹0</p>
+        </div>
+    </div>
+    
+    <script>
+        let cart = [];
 
+        function addToCart(button) {
+            let product = button.parentElement;
+            let name = product.getAttribute('data-name');
+            let price = parseFloat(product.getAttribute('data-price'));
+            
+            cart.push({ name, price });
+            updateCart();
+        }
+
+        function updateCart() {
+            let cartList = document.querySelector('.cart-items');
+            let totalAmount = document.querySelector('.total');
+            cartList.innerHTML = '';
+            
+            let total = 0;
+            cart.forEach((item, index) => {
+                let li = document.createElement('li');
+                li.innerHTML = `${item.name} - $${item.price} <button onclick="removeItem(${index})">Remove</button>`;
+                cartList.appendChild(li);
+                total += item.price;
+            });
+            
+            totalAmount.innerText = `Total: ₹${total}`;
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+    </script>
+</body>
+</html>
